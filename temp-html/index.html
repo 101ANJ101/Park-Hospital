@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Park Hospital - Care Beyond Technology</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#53442e",
+                        "tertiary-fixed-dim": "#d9c3a5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "surface-tint": "#4a607c",
+                        "on-surface": "#191c1e",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b2c8e8",
+                        "on-tertiary-fixed": "#251a07",
+                        "primary-fixed-dim": "#b2c8e8",
+                        "primary-container": "#0f2740",
+                        "on-primary-fixed": "#031c35",
+                        "on-secondary-fixed": "#002113",
+                        "primary-fixed": "#d2e4ff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c6ce",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#456d57",
+                        "outline": "#74777e",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "primary": "#001226",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#274e3b",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#c0edd2",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-container": "#798fad",
+                        "background": "#f7f9fb",
+                        "on-surface-variant": "#43474d",
+                        "inverse-surface": "#2d3133",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#9d8a6f",
+                        "on-primary-fixed-variant": "#324863",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary": "#1a0f01",
+                        "secondary": "#3f6752",
+                        "secondary-container": "#c0edd2",
+                        "tertiary-fixed": "#f6dfc0",
+                        "tertiary-container": "#302410",
+                        "secondary-fixed-dim": "#a5d0b7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "margin-tablet": "40px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["manrope"],
+                        "label-sm": ["inter"],
+                        "headline-lg": ["manrope"],
+                        "body-lg": ["inter"],
+                        "body-md": ["inter"],
+                        "headline-md": ["manrope"],
+                        "display-xl": ["manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "display-xl": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="flex items-center" href="index.html"><img alt="Park Hospital Logo" class="w-auto object-contain h-16" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9sFtGsh8OiLKr7YLc0cvlnvDegcTa7gyTxMTQetw3-yzVMoxndUuoU7Wkj2osfTkaZROTakM0Vl0NVfuL_rw-U31IP_wleh84matTTm3q5laIV5io3qwckx9CsdrQR4aVJGphDFNmramOrPTDJkfaKrn5KwhjqOybguYla1b2bkMllex4lF3oMi3fCuzuBosS8KJQxAqLDUcNVt1065PQLutWAL7vcKkn_PBaqMiTlJ9arEiHRME1tOrRBKMy8Z2XzKBDPtECcSV"/></a>
+<ul class="hidden md:flex gap-8 items-center font-body-md text-body-md uppercase tracking-wider"><li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="index.html">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="specialties.html">Specialties</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="doctors.html">Doctors</a></li><li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="facilities.html">Facilities</a></li><li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="patient-care.html">Patient Care</a></li><li><a class="text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">About Us</a></li></ul>
+<div class="hidden lg:flex items-center gap-4">
+<button class="font-label-sm text-label-sm text-secondary border border-secondary px-6 py-3 rounded-full hover:bg-secondary/5 transition-colors">Emergency</button>
+<button class="font-label-sm text-label-sm text-on-primary bg-primary px-6 py-3 rounded-full hover:bg-primary/90 transition-colors" onclick="window.location.href='book.html'">Book Appointment</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-[100px]">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter w-full z-10 relative">
+<div class="md:col-span-7 flex flex-col justify-center pt-20 md:pt-0">
+<h1 class="font-display-xl text-display-xl text-primary mb-6">
+                        Advanced Care.<br/>
+<span class="text-secondary">Human Touch.</span><br/>
+                        Every Time.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-[500px]">
+                        Modern medicine with compassion. We believe in treating the person, not just the condition, creating a healthier tomorrow for everyone.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="font-label-sm text-label-sm text-on-primary bg-primary px-8 py-4 rounded-full hover:bg-primary/90 transition-colors shadow-lg" onclick="window.location.href='book.html'">Book Appointment</button>
+<button class="font-label-sm text-label-sm text-secondary border border-secondary px-8 py-4 rounded-full hover:bg-secondary/5 transition-colors">Emergency Care</button>
+</div>
+</div>
+</div>
+<!-- Hero Image Background / Asymmetrical Placement -->
+<div class="absolute right-0 top-0 w-full md:w-[60%] h-full z-0 opacity-20 md:opacity-100 pointer-events-none">
+<div class="w-full h-full relative rounded-bl-[100px] overflow-hidden">
+<img alt="Doctor smiling and holding hands with a young patient in a bright, modern hospital room." class="w-full h-full object-cover object-center" data-alt="A cinematic, high-key photograph of a compassionate female doctor in a pristine white coat, gently holding the hands of a young child patient in a modern, sunlit hospital room. The aesthetic is bright, optimistic, and uses a soft color palette with natural light streaming through large windows, embodying a Scandinavian minimalist, light-mode style. The interaction feels genuine, warm, and deeply human, focusing on reassurance and care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN4qADoAM_yOG_kN9G0GMD344ug8msqk1fFFnrWIyi4dUcmnH07iMFG4x1B3xvkNUgY_CJ9nxVZreUFaB31t7mNBKNN7IPoh5QdrRWCBNjHRtQJVNF8xaZ31IKNzEgkxHIyN3C88rtc4c-smBd6TQaiUCQ4UDgCWo3pLHhSucjhpeTY8DfQkhNf0Sxvclw9HYrkabVi2as4CkFbZfTm2h26SO8rHGjIlC0JK1LTEKUunuAHFfO5AimJ1ns9kmBp-npiHSjzK1opPsG"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent md:via-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Trust Metrics Glass Bar -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto -mt-20 relative z-20">
+<div class="bg-surface/80 backdrop-blur-2xl rounded-2xl p-8 shadow-[0_20px_60px_-15px_rgba(0,18,38,0.05)] border border-surface-container-high">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined icon-fill">verified</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary">25+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Years of Trust</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined icon-fill">group</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary">1.2L+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Patients Treated</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined icon-fill">stethoscope</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary">250+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Expert Doctors</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined icon-fill">emergency</span>
+</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary">24x7</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Emergency Care</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialties Section (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-section-gap">
+<div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-2xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest mb-4 block">Our Specialties</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Specialized Care<br/>For Every Need</h2>
+</div>
+<a class="font-label-sm text-label-sm text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors inline-flex items-center gap-2" href="#">
+                    Explore All Specialties <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Card -->
+<div class="md:col-span-8 group relative rounded-2xl overflow-hidden h-[400px] cursor-pointer">
+<img alt="Cardiology department visual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed, cinematic 3D render of a glowing human heart, symbolizing advanced cardiology. The background is a deep, sophisticated dark navy blue, providing high contrast to the warm, bright red and orange internal glow of the heart model. The lighting is dramatic and editorial, reflecting cutting-edge medical technology and expert care within a modern, polished aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjZbSDP0KJI8cvJwok46ZgDc-pspWh1EqMOKQbKy3bLzKRlPP2istZSPHwEvIx9qVAaX9WJTnF-YeC9EnVG0Cusc0E-rSKAnFbKd25jV8vqu_jd8daugXNdfxEWKNYGGtZzgA0XkK3jjhvwqIRVlJ7m9MjrT4dgg_aAQJblYbVa2HK2qJ7AYJc87s81X8QkeJ7W_svzFnG0CH5LSqzWRgjhbuKsfUZ96YOuAbxConylorNwvkDHiR6BH8w_zKS4R0BVG0MaQJvgqE8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Cardiology</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Advanced heart care and surgeries.</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-on-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Card 1 -->
+<div class="md:col-span-4 group relative rounded-2xl overflow-hidden h-[400px] cursor-pointer">
+<img alt="Neurology department visual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A conceptual, luminous visualization of a human brain featuring glowing neural pathways, representing advanced neurology. Set against a deep, muted background, the glowing blue and white neural connections stand out sharply. The style is sleek, modern, and clinical yet deeply artistic, emphasizing high-tech medical diagnostics and expert neurological care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWmA6LiGAGdZgUcZOxY3Zc10v2B3JI3B-6wVc68AMbnNs9Gdz8U-jfoyKf1QU5w2TgHT8SjBE1d8anvp5rBfrY05rZRpsbxxIXB1qx42wj9wGobQ3ao0XuvcBr-KnnTixMKyUfCMlyqFVKyAQQSfI63tcQm_TiK6kIiPX67DzuDXd77l_n8kLcXL1mKfo9x6I8gYJB22yHD6TZiD_x4qlvJqLHQEo-WaGQKjSUD-AhehktzVCBZOCY8N1Xurn_a9ZJeA0m3f1U1PQs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Neurology</h3>
+<p class="font-body-md text-body-md text-on-primary/80">Brain &amp; nerve care.</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center text-on-primary group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bg-primary text-on-primary grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto border-t border-outline-variant/10">
+<div class="col-span-1 md:col-span-1">
+<div class="mb-6 flex items-center" onclick="window.location.href='index.html'"><img alt="Park Hospital Logo" class="h-16 w-auto object-contain brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9sFtGsh8OiLKr7YLc0cvlnvDegcTa7gyTxMTQetw3-yzVMoxndUuoU7Wkj2osfTkaZROTakM0Vl0NVfuL_rw-U31IP_wleh84matTTm3q5laIV5io3qwckx9CsdrQR4aVJGphDFNmramOrPTDJkfaKrn5KwhjqOybguYla1b2bkMllex4lF3oMi3fCuzuBosS8KJQxAqLDUcNVt1065PQLutWAL7vcKkn_PBaqMiTlJ9arEiHRME1tOrRBKMy8Z2XzKBDPtECcSV"/></div>
+<p class="font-body-md text-body-md text-surface-variant/70 mb-8 max-w-xs">
+                Compassionate care. Advanced medicine. Human at heart.
+            </p>
+<p class="font-body-md text-body-md text-surface-variant/70">
+                © 2024 Park Hospital. Care Beyond Technology. All rights reserved.
+            </p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-surface mb-6 uppercase tracking-widest">Medical Services</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="specialties.html">Cardiology</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="specialties.html">Neurology</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="specialties.html">Orthopedics</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="specialties.html">Pediatrics</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-surface mb-6 uppercase tracking-widest">Patient Resources</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Patient Portal</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Insurance Partners</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="facilities.html">Diagnostic Center</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Telemedicine</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm text-surface mb-6 uppercase tracking-widest">Hospital</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="about.html">About Us</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Career</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Contact</a></li>
+<li><a class="text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+</footer>
+
+<!-- Custom Mobile Navigation Drawer -->
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden bg-primary/40 backdrop-blur-md transition-opacity duration-300">
+    <div class="fixed right-0 top-0 h-full w-[280px] bg-surface p-6 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-headline-md text-[20px] font-bold text-primary">Navigation</span>
+                <button onclick="toggleMobileDrawer()" class="text-primary hover:text-secondary">
+                    <span class="material-symbols-outlined text-[28px]">close</span>
+                </button>
+            </div>
+            <ul class="space-y-6 font-body-md text-[18px] uppercase tracking-wider">
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="about.html">About Us</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="specialties.html">Specialties</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="doctors.html">Doctors</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="facilities.html">Facilities</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="patient-care.html">Patient Care</a></li>
+            </ul>
+        </div>
+        <div class="space-y-4">
+            <button class="w-full font-label-sm text-label-sm text-secondary border border-secondary py-3 rounded-full hover:bg-secondary/5 transition-colors">Emergency</button>
+            <button onclick="window.location.href='book.html'" class="w-full font-label-sm text-label-sm text-on-primary bg-primary py-3 rounded-full hover:bg-primary/90 transition-colors shadow-lg">Book Appointment</button>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerContent = drawer.querySelector('.translate-x-full') || drawer.querySelector('.translate-x-0');
+    
+    if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        setTimeout(() => {
+            drawer.classList.remove('bg-primary/0');
+            drawer.classList.add('bg-primary/40');
+            drawerContent.classList.remove('translate-x-full');
+            drawerContent.classList.add('translate-x-0');
+        }, 10);
+    } else {
+        drawerContent.classList.remove('translate-x-0');
+        drawerContent.classList.add('translate-x-full');
+        drawer.classList.remove('bg-primary/40');
+        drawer.classList.add('bg-primary/0');
+        setTimeout(() => {
+            drawer.classList.add('hidden');
+        }, 300);
+    }
+}
+
+// Hook mobile menus globally
+document.addEventListener('DOMContentLoaded', () => {
+    // Look for hamburger button in header
+    const menuBtns = document.querySelectorAll('header button, nav button');
+    menuBtns.forEach(btn => {
+        if (btn.querySelector('.material-symbols-outlined') && btn.querySelector('.material-symbols-outlined').textContent.trim() === 'menu') {
+            btn.setAttribute('onclick', 'toggleMobileDrawer()');
+        }
+    });
+});
+</script>
+
+</body></html>

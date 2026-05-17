@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Park Hospital - Smart Appointment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#53442e",
+                    "tertiary-fixed-dim": "#d9c3a5",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "surface-tint": "#4a607c",
+                    "on-surface": "#191c1e",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-bright": "#f7f9fb",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#b2c8e8",
+                    "on-tertiary-fixed": "#251a07",
+                    "primary-fixed-dim": "#b2c8e8",
+                    "primary-container": "#0f2740",
+                    "on-primary-fixed": "#031c35",
+                    "on-secondary-fixed": "#002113",
+                    "primary-fixed": "#d2e4ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c4c6ce",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#456d57",
+                    "outline": "#74777e",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "primary": "#001226",
+                    "surface": "#f7f9fb",
+                    "on-secondary-fixed-variant": "#274e3b",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#c0edd2",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-container": "#798fad",
+                    "background": "#f7f9fb",
+                    "on-surface-variant": "#43474d",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary-container": "#9d8a6f",
+                    "on-primary-fixed-variant": "#324863",
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary": "#1a0f01",
+                    "secondary": "#3f6752",
+                    "secondary-container": "#c0edd2",
+                    "tertiary-fixed": "#f6dfc0",
+                    "tertiary-container": "#302410",
+                    "secondary-fixed-dim": "#a5d0b7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "section-gap": "120px",
+                    "margin-tablet": "40px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "manrope"
+                    ],
+                    "label-sm": [
+                            "inter"
+                    ],
+                    "headline-lg": [
+                            "manrope"
+                    ],
+                    "body-lg": [
+                            "inter"
+                    ],
+                    "body-md": [
+                            "inter"
+                    ],
+                    "headline-md": [
+                            "manrope"
+                    ],
+                    "display-xl": [
+                            "manrope"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-xl": [
+                            "72px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .layered-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 18, 38, 0.05), 0 2px 4px -1px rgba(0, 18, 38, 0.03);
+        }
+        .layered-shadow-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 18, 38, 0.08), 0 4px 6px -2px rgba(0, 18, 38, 0.04);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-primary/70 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="flex items-center space-x-2" href="index.html"><img alt="Park Hospital Logo" class="w-auto h-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9sFtGsh8OiLKr7YLc0cvlnvDegcTa7gyTxMTQetw3-yzVMoxndUuoU7Wkj2osfTkaZROTakM0Vl0NVfuL_rw-U31IP_wleh84matTTm3q5laIV5io3qwckx9CsdrQR4aVJGphDFNmramOrPTDJkfaKrn5KwhjqOybguYla1b2bkMllex4lF3oMi3fCuzuBosS8KJQxAqLDUcNVt1065PQLutWAL7vcKkn_PBaqMiTlJ9arEiHRME1tOrRBKMy8Z2XzKBDPtECcSV"/></a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="about.html">About Us</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="specialties.html">Specialties</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="doctors.html">Doctors</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="facilities.html">Facilities</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="patient-care.html">Patient Care</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300 bg-transparent border border-outline-variant px-6 py-2 rounded-full">Emergency</button>
+<button class="bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-full hover:bg-on-primary-fixed transition-colors duration-300 scale-95 active:scale-90 shadow-sm" onclick="window.location.href='book.html'">Book Appointment</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-[100px] min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-24">
+<!-- Hero / Intro -->
+<div class="mb-16 md:mb-24 text-center md:text-left max-w-3xl">
+<h1 class="font-display-xl text-display-xl text-primary mb-6">Smart Scheduling.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Let's find the right care for you. Answer a few simple questions or select your preferred department directly to book your appointment.</p>
+</div>
+<!-- Bento Layout for Booking Flow -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Interactive Flow (Spans 8 columns) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Step 1: Pathway Selection -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-surface-container-highest layered-shadow relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">How would you like to proceed?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Option A: By Specialty -->
+<button class="text-left p-6 rounded-lg border border-outline-variant bg-surface hover:border-secondary hover:bg-secondary-container/10 transition-all duration-300 group layered-shadow-hover focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
+<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mb-4 group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary text-[24px]">stethoscope</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-2">Select a Department</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">I know which specialty or doctor I need to see.</p>
+</button>
+<!-- Option B: By Symptom (Guided) -->
+<button class="text-left p-6 rounded-lg border-2 border-secondary bg-secondary-container/5 transition-all duration-300 group layered-shadow-hover focus:outline-none ring-2 ring-secondary/20 relative">
+<div class="absolute -top-3 -right-3 bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full shadow-sm">Recommended</div>
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-[24px]">psychology</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-2">Guided Match</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Describe your symptoms and we'll recommend the right specialist.</p>
+</button>
+</div>
+</div>
+<!-- Step 2: Active State (Guided Match selected) -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-surface-container-highest layered-shadow transition-all duration-500 opacity-100 transform translate-y-0">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-md text-headline-md text-primary">What brings you in today?</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Step 1 of 3</span>
+</div>
+<!-- Symptom Search/Select -->
+<div class="mb-8">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider" for="symptom-search">Describe your symptoms</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface border-b border-outline-variant hover:border-outline focus:border-secondary focus:ring-0 pl-12 pr-4 py-4 font-body-md text-body-md text-on-surface transition-colors bg-transparent placeholder-outline-variant focus:outline-none" id="symptom-search" placeholder="e.g., Chest pain, severe headache, joint ache..." type="text"/>
+</div>
+</div>
+<!-- Common Symptoms Chips -->
+<div class="mb-8">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-3 uppercase tracking-wider">Common Concerns</p>
+<div id="chips-container" class="flex flex-wrap gap-2">
+<button onclick="selectSymptom('Fever')" class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors">Fever</button>
+<button onclick="selectSymptom('Joint Pain')" class="px-4 py-2 rounded-full border border-secondary bg-secondary-container/20 text-primary font-body-md text-body-md hover:bg-secondary-container/30 transition-colors flex items-center space-x-2">
+<span>Joint Pain</span>
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<button onclick="selectSymptom('Persistent Cough')" class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors">Persistent Cough</button>
+<button onclick="selectSymptom('Stomach Ache')" class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors">Stomach Ache</button>
+<button onclick="selectSymptom('Back Pain')" class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors">Back Pain</button>
+</div>
+</div>
+<!-- Intelligent Recommendation Result -->
+<div class="bg-surface-bright rounded-lg p-6 border border-surface-container-highest">
+<div class="flex items-start space-x-4">
+<div class="mt-1">
+<span class="material-symbols-outlined text-secondary text-[28px]">lightbulb</span>
+</div>
+<div>
+<h4 id="rec-title" class="font-body-lg text-body-lg font-semibold text-primary mb-1">Recommended Department: Orthopedics</h4>
+<p id="rec-desc" class="font-body-md text-body-md text-on-surface-variant mb-4">Based on 'Joint Pain', we recommend consulting an Orthopedic specialist for a comprehensive evaluation.</p>
+<button id="rec-btn" class="bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-full hover:bg-on-primary-fixed transition-colors shadow-sm">Continue with Orthopedics</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Patient Context / Support (Spans 4 columns) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Need Help Card (Glassmorphic vibe) -->
+<div class="glass-panel rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all duration-500"></div>
+<h3 class="font-headline-md text-[24px] leading-tight text-primary mb-3">Not sure where to start?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 relative z-10">Speak with our triage nurses to get immediate guidance on your symptoms.</p>
+<div class="space-y-4 relative z-10">
+<a class="flex items-center space-x-3 text-primary hover:text-secondary transition-colors group/link" href="#">
+<div class="w-10 h-10 rounded-full bg-primary-container/5 flex items-center justify-center group-hover/link:bg-secondary-container/30 transition-colors">
+<span class="material-symbols-outlined">call</span>
+</div>
+<span class="font-body-md text-body-md font-semibold">+91 11 1234 5678</span>
+</a>
+<a class="flex items-center space-x-3 text-primary hover:text-secondary transition-colors group/link" href="#">
+<div class="w-10 h-10 rounded-full bg-primary-container/5 flex items-center justify-center group-hover/link:bg-secondary-container/30 transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<span class="font-body-md text-body-md font-semibold">Start Live Chat</span>
+</a>
+</div>
+</div>
+<!-- Preparation Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-highest layered-shadow">
+<h3 class="font-body-lg text-body-lg font-semibold text-primary mb-4 flex items-center">
+<span class="material-symbols-outlined mr-2 text-secondary">list_alt</span>
+                            Before You Book
+                        </h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-outline-variant mr-3 mt-0.5 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Have your insurance information ready if applicable.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-outline-variant mr-3 mt-0.5 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Note down any current medications you are taking.</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-outline-variant mr-3 mt-0.5 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Previous medical records can be uploaded in the final step.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full relative bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-1 space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-surface dark:text-primary-fixed tracking-tight"><a href="index.html"><img alt="Park Hospital Logo" class="h-12 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg9sFtGsh8OiLKr7YLc0cvlnvDegcTa7gyTxMTQetw3-yzVMoxndUuoU7Wkj2osfTkaZROTakM0Vl0NVfuL_rw-U31IP_wleh84matTTm3q5laIV5io3qwckx9CsdrQR4aVJGphDFNmramOrPTDJkfaKrn5KwhjqOybguYla1b2bkMllex4lF3oMi3fCuzuBosS8KJQxAqLDUcNVt1065PQLutWAL7vcKkn_PBaqMiTlJ9arEiHRME1tOrRBKMy8Z2XzKBDPtECcSV"/></a></div>
+<p class="font-body-md text-body-md text-surface-variant/70">Compassionate care. Advanced medicine. Human at heart.</p>
+<p class="font-label-sm text-label-sm text-surface-variant/50 mt-8">© 2024 Park Hospital. Care Beyond Technology. All rights reserved.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-body-lg text-body-lg font-semibold text-surface mb-6">Medical Departments</h4>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="specialties.html">Cardiology</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="specialties.html">Neurology</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="specialties.html">Orthopedics</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="specialties.html">Pediatrics</a>
+</div>
+<div class="space-y-4">
+<h4 class="font-body-lg text-body-lg font-semibold text-surface mb-6">Patient Services</h4>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="facilities.html">Diagnostic Center</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Telemedicine</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Patient Portal</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Insurance Partners</a>
+</div>
+<div class="space-y-4">
+<h4 class="font-body-lg text-body-lg font-semibold text-surface mb-6">Hospital Information</h4>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="about.html">About Us</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Career</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="block font-body-md text-body-md text-surface-variant/70 hover:text-secondary-fixed transition-all duration-200 opacity-80 hover:opacity-100" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+
+<!-- Custom Mobile Navigation Drawer -->
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden bg-primary/40 backdrop-blur-md transition-opacity duration-300">
+    <div class="fixed right-0 top-0 h-full w-[280px] bg-surface p-6 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between">
+        <div>
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-headline-md text-[20px] font-bold text-primary">Navigation</span>
+                <button onclick="toggleMobileDrawer()" class="text-primary hover:text-secondary">
+                    <span class="material-symbols-outlined text-[28px]">close</span>
+                </button>
+            </div>
+            <ul class="space-y-6 font-body-md text-[18px] uppercase tracking-wider">
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="index.html">Home</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="about.html">About Us</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="specialties.html">Specialties</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="doctors.html">Doctors</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="facilities.html">Facilities</a></li>
+                <li><a class="block py-2 text-on-surface-variant hover:text-secondary transition-colors duration-200" href="patient-care.html">Patient Care</a></li>
+            </ul>
+        </div>
+        <div class="space-y-4">
+            <button class="w-full font-label-sm text-label-sm text-secondary border border-secondary py-3 rounded-full hover:bg-secondary/5 transition-colors">Emergency</button>
+            <button onclick="window.location.href='book.html'" class="w-full font-label-sm text-label-sm text-on-primary bg-primary py-3 rounded-full hover:bg-primary/90 transition-colors shadow-lg">Book Appointment</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Symptom Triage Interactive Logic
+const symptoms = {
+    "Fever": {
+        dept: "Pediatrics & General Medicine",
+        desc: "Based on 'Fever', we recommend consulting a General Medicine or Pediatric specialist to diagnose the root cause."
+    },
+    "Joint Pain": {
+        dept: "Orthopedics",
+        desc: "Based on 'Joint Pain', we recommend consulting an Orthopedic specialist for a comprehensive muscle/bone evaluation."
+    },
+    "Persistent Cough": {
+        dept: "Pulmonology & Respiratory Care",
+        desc: "Based on 'Persistent Cough', we recommend consulting a Pulmonology specialist to evaluate your chest and airway."
+    },
+    "Stomach Ache": {
+        dept: "Gastroenterology",
+        desc: "Based on 'Stomach Ache', we recommend consulting a Gastroenterology specialist to assess digestive symptoms."
+    },
+    "Back Pain": {
+        dept: "Spine & Pain Management",
+        desc: "Based on 'Back Pain', we recommend consulting an Orthopedic or Spine Specialist to relieve musculoskeletal discomfort."
+    }
+};
+
+function selectSymptom(name) {
+    // update search bar
+    document.getElementById('symptom-search').value = name;
+    
+    // update chips styles
+    const chipsContainer = document.getElementById('chips-container');
+    if (chipsContainer) {
+        const buttons = chipsContainer.getElementsByTagName('button');
+        for (let btn of buttons) {
+            const spanEl = btn.querySelector('span');
+            const btnText = spanEl ? spanEl.innerText.trim() : btn.innerText.trim();
+            if (btnText === name || btnText.startsWith(name)) {
+                // make active
+                btn.className = "px-4 py-2 rounded-full border border-secondary bg-secondary-container/20 text-primary font-body-md text-body-md hover:bg-secondary-container/30 transition-colors flex items-center space-x-2";
+                btn.innerHTML = `<span>${name}</span><span class="material-symbols-outlined text-[16px]">close</span>`;
+            } else {
+                // make inactive
+                const originalName = btnText.split('\n')[0].replace('close', '').trim();
+                btn.className = "px-4 py-2 rounded-full border border-outline-variant text-on-surface font-body-md text-body-md hover:bg-surface-container transition-colors";
+                btn.innerHTML = originalName;
+            }
+        }
+    }
+    
+    // update recommendation
+    const rec = symptoms[name];
+    if (rec) {
+        document.getElementById('rec-title').innerText = "Recommended Department: " + rec.dept;
+        document.getElementById('rec-desc').innerText = rec.desc;
+        document.getElementById('rec-btn').innerText = "Continue with " + rec.dept;
+    }
+}
+
+// Hook search input for typing
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('symptom-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            let matchedDept = "General Medicine";
+            let matchedDesc = "Describe your symptoms or choose from the common concerns, and we will match you with a leading specialist.";
+            
+            if (val.includes('fever') || val.includes('temp') || val.includes('cold') || val.includes('hot')) {
+                matchedDept = "Pediatrics & General Medicine";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting a General Practitioner or Pediatric specialist.`;
+            } else if (val.includes('joint') || val.includes('bone') || val.includes('knee') || val.includes('fracture') || val.includes('ortho')) {
+                matchedDept = "Orthopedics";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting an Orthopedic specialist for a comprehensive muscle/bone evaluation.`;
+            } else if (val.includes('cough') || val.includes('chest') || val.includes('breath') || val.includes('lung') || val.includes('throat')) {
+                matchedDept = "Pulmonology & Respiratory Care";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting a Respiratory Specialist to assess chest and airway symptoms.`;
+            } else if (val.includes('stomach') || val.includes('belly') || val.includes('ache') || val.includes('pain') || val.includes('digest')) {
+                matchedDept = "Gastroenterology";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting a Gastroenterology consultant for digestive and abdominal care.`;
+            } else if (val.includes('brain') || val.includes('headache') || val.includes('migraine') || val.includes('nerve') || val.includes('neuro')) {
+                matchedDept = "Neurology";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting a Neurologist or Neurosurgeon for assessment.`;
+            } else if (val.includes('heart') || val.includes('cardio') || val.includes('beat') || val.includes('pulse')) {
+                matchedDept = "Cardiology";
+                matchedDesc = `Based on '${e.target.value}', we recommend consulting a Cardiologist for heart care assessment.`;
+            } else if (val.trim().length > 0) {
+                matchedDept = "General Medicine / Triage";
+                matchedDesc = `Based on '${e.target.value}', we recommend starting with a General Practitioner or booking a live chat for triage.`;
+            }
+            
+            document.getElementById('rec-title').innerText = "Recommended Department: " + matchedDept;
+            document.getElementById('rec-desc').innerText = matchedDesc;
+            document.getElementById('rec-btn').innerText = "Continue with " + matchedDept;
+        });
+    }
+});
+
+function toggleMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerContent = drawer.querySelector('.translate-x-full') || drawer.querySelector('.translate-x-0');
+    
+    if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+        setTimeout(() => {
+            drawer.classList.remove('bg-primary/0');
+            drawer.classList.add('bg-primary/40');
+            drawerContent.classList.remove('translate-x-full');
+            drawerContent.classList.add('translate-x-0');
+        }, 10);
+    } else {
+        drawerContent.classList.remove('translate-x-0');
+        drawerContent.classList.add('translate-x-full');
+        drawer.classList.remove('bg-primary/40');
+        drawer.classList.add('bg-primary/0');
+        setTimeout(() => {
+            drawer.classList.add('hidden');
+        }, 300);
+    }
+}
+
+// Hook mobile menus globally
+document.addEventListener('DOMContentLoaded', () => {
+    // Look for hamburger button in header
+    const menuBtns = document.querySelectorAll('header button, nav button');
+    menuBtns.forEach(btn => {
+        if (btn.querySelector('.material-symbols-outlined') && btn.querySelector('.material-symbols-outlined').textContent.trim() === 'menu') {
+            btn.setAttribute('onclick', 'toggleMobileDrawer()');
+        }
+    });
+});
+</script>
+
+</body></html>
